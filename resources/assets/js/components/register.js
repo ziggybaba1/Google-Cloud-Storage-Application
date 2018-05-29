@@ -2,6 +2,7 @@ import React, { Component } from 'react'
 import { Link } from 'react-router-dom'
 import Nav from './navbar'
 import axios from 'axios'
+import { withRouter } from 'react-router-dom'
 
 class Register extends Component {
 
@@ -27,6 +28,7 @@ class Register extends Component {
           })
           .then(response=> {
             jQuery('.loading').hide();
+            localStorage.setItem('token', response.token);
            this.setState({err: false});
            this.props.history.push("home") ;
           })
@@ -44,6 +46,12 @@ class Register extends Component {
         const {name, value} = e.target ;
         this.setState({[name]: value});
      }
+      handleClick(e){
+
+    e.preventDefault();
+    this.props.history.push('/');
+
+  }
 
     render() {
         let error = this.state.err ;
@@ -51,7 +59,16 @@ class Register extends Component {
         let name = (!error) ? 'alert alert-success' : 'alert alert-danger' ;
         return (  
          <div >
-                <Nav /> 
+              <nav className="navbar navbar-default">
+          <div className="container-fluid">
+              <div className="navbar-header">
+                <a className="navbar-brand" href="#" onClick ={this.handleClick.bind(this)}>Home</a>
+              </div>
+              <ul className="nav navbar-nav ">
+               <li><Link to="/login">Login</Link></li>
+               </ul>
+                </div>
+        </nav>
             <div className="wrapper">
             <div className="container-fluid">
             <div className="row">

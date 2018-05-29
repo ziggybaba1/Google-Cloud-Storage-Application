@@ -34,6 +34,12 @@ class Home extends Component {
   onChange(e) {
     this.setState({file:e.target.files[0]})
   }
+  handleClick(e){
+
+    e.preventDefault();
+    this.props.history.push('/');
+
+  }
   onClick(){
  // SHOWING AJAX PRELOADER IMAGE
     jQuery('#modal_ajax .modal-body').html('<div style="text-align:center;margin-top:200px;"><img src="/public/assets/images/preloader.gif" style="height:25px;" /></div>');
@@ -53,14 +59,14 @@ class Home extends Component {
         let error = this.state.err ;
         let msg = (!error) ? 'Upload Successful' : 'Uploading Unsuccessful' ;
         let name = (!error) ? 'alert alert-success' : 'alert alert-danger' ;
+      if(localStorage.getItem('token')) {
     return (
-         <div> 
+         <div>
             <Nav link="Logout" />       
          <div classNameName="wrapper">
             <div classNameName="container-fluid">
                 <div className="row">
-                <div className="col-1">
-                 
+                <div className="col-1">  
                 </div>
                     <div className="col-10 adjust">
                         <div className="card-box">
@@ -75,6 +81,38 @@ class Home extends Component {
         </div>
           </div>   
     )
+  }
+  else{
+  return (
+    <div>
+  <nav className="navbar navbar-default">
+          <div className="container-fluid">
+              <div className="navbar-header">
+                <a className="navbar-brand" href="#" onClick ={this.handleClick.bind(this)}>Home</a>
+              </div>
+              <ul className="nav navbar-nav ">
+               <li><Link to="/Register">Register</Link></li>
+               </ul>
+                </div>
+        </nav>     
+         <div classNameName="wrapper">
+            <div classNameName="container-fluid">
+                <div className="row">
+                <div className="col-1">  
+                </div>
+                    <div className="col-10 adjust">
+                        <div className="card-box">
+                        <label>You are not Logged in, Please Click the login menu</label>                     
+                </div>
+            </div>
+            <div className="col-1">
+                </div>
+        </div>
+        </div>
+        </div>
+        </div>
+    )
+  }
   }
 }
 
