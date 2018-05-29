@@ -1,6 +1,6 @@
 <h3>Google Cloud Storage application</h3>
 
-A basic Google Cloud Storage application with Reactjs frontend + Laravel api.This application covers basic auth flows like login , register, reset password, forgot password,Admin dashboard, File Upload to Google Cloud, File Download, Delete File and Retrieve Deleted Files.
+A Simple Google Cloud Storage application with Reactjs frontend + Laravel api.This application covers basic application flows like login , register, reset password, forgot password,Admin dashboard, File Upload to Google Cloud, Files Download, Delete Files and Retrieve deleted Files.
 
 Please follow the below steps to run the project.This steps are for those who have laravel , composer and node installed in your local machine.If not, please proceed with the steps after installing the same.
 
