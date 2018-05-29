@@ -1,4 +1,5 @@
-react-laravel-auth
+<h3>Google Cloud Storage application</h3>
+
 A basic Google Cloud Storage application with Reactjs frontend + Laravel api.This application covers basic auth flows like login , register, reset password, forgot password,Admin dashboard, File Upload to Google Cloud, File Download, Delete File and Retrieve Deleted Files.
 
 Please follow the below steps to run the project.This steps are for those who have laravel , composer and node installed in your local machine.If not, please proceed with the steps after installing the same.
@@ -23,7 +24,8 @@ Please follow the below steps to run the project.This steps are for those who ha
 <li>6) Run php artisan serve .</li>
 <li>6) Create an account on Google Cloud platform</li>
 <li>7)Add a Google Cloud Credentials to your filesystems.php config</li>
-
+<pre>
+<span>
 'gcs' => [
     'driver' => 'gcs',
     'project_id' => env('GOOGLE_CLOUD_PROJECT_ID', 'your-project-id'),
@@ -32,8 +34,9 @@ Please follow the below steps to run the project.This steps are for those who ha
     'path_prefix' => env('GOOGLE_CLOUD_STORAGE_PATH_PREFIX', null), // optional: /default/path/to/apply/in/bucket
     'storage_api_uri' => env('GOOGLE_CLOUD_STORAGE_API_URI', null), // see: Public URLs below
 ],
-
-<li>Launch Application</li>
+</span>
+</pre>
+<li>8)Launch Application</li>
 
 <h4>Online Demo</h4> 
 <li href="https://operating-pod-205321.appspot.com">https://operating-pod-205321.appspot.com</Li>
