@@ -68,7 +68,7 @@
                             </div>
                              <div class="tab-pane" id="profile">
                                 <div class="row">
-                                    <div class="loado"></div>
+                                    <div class="loadinly"></div>
                          @forelse(\App\Upload::onlyTrashed()->simplePaginate(30) as $delete)
                                 <div class="col-lg-3 col-xl-3">
                                     <div class="file-man-box">
@@ -130,18 +130,18 @@
                                 }
                                  function recdeleted(url)
                                 {
-                                jQuery('.loado').html('<div style="text-align:center;"><img src="/public/assets/images/preloader.gif" style="height:25px;" /></div>');
+                                jQuery('.loadinly').html('<div style="text-align:center;"><img src="/public/assets/images/preloader.gif" style="height:25px;" /></div>');
                                     $.ajax({
                                     url: url,
                                     success: function(response)
                                     {
                                     jQuery('#show_media').html(response);
-                                     $('.loado').hide();
+                                     $('.loadinly').hide();
                                     alert('Files has been restore Successfully');
                                     },
                                      error: function(response)
                                     {
-                                    $('.loado').hide();
+                                    $('.loadinly').hide();
                                     alert('Error occured in restoring file');
                                     },
                                     });
